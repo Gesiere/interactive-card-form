@@ -1,0 +1,78 @@
+.right-side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include breakpoint-down(medium){
+        margin-top: 5rem;
+    }
+
+    .form-container{
+        .form-control{
+            max-width:  400px;
+            margin-inline: auto;
+            @include breakpoint-down(medium){
+                max-width: 90%;
+            }
+            form{
+                .form-inputs{
+                    margin: 0.5rem 0 1rem 0;
+                    label{
+                        font-weight: 700;
+                        font-size: 11px;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: $very-dark-violet;
+                    }
+                    input{
+                        padding:0.5rem;
+                        width: 100%;
+                        border: 2px solid $light-grayish-violet;
+                        border-radius: 5px;
+                        margin-top: 5px;
+                        transition: all ease-in-out 0.4s;
+                        &::placeholder{
+                            color: $light-grayish-violet;
+                            font-size: 1rem;
+                        }
+                        &.error{
+                            margin-bottom: 8px;
+                            border: 2px solid $red-input-error;
+                        }
+                        &:focus{
+                            outline: 2px solid $linear2-active-border;
+                            border: $linear1-active-border;
+                        }
+                    }
+                    span{
+                            font-size: 14px;
+            color: $red-input-error;
+        }
+                .bottom-inputs{
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    @include breakpoint-down(medium){
+                        display: flex;
+                    }
+                    .bottom-one{
+                        // display: inline;
+                        .inputs{
+                            display: flex;
+                            input{
+                                margin-right: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+            button{
+            
+                padding:1rem;
+                
+            }
+            }
+        }
+
+       
+    }
+;
+}

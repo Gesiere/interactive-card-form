@@ -1,0 +1,139 @@
+@import './variables';
+@import './breakpoint';
+@import './form.scss';
+@import './thank-you';
+
+body {
+  font-size: 100%;
+  min-height: 100vh;
+}
+
+.sides {
+  @include breakpoint-up(medium) {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
+  .left-side {
+    background-image: url(../assets/images/bg-main-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    @include breakpoint-up(medium) {
+      min-height: 100vh;
+    }
+    @include breakpoint-down(medium) {
+      padding-top: 3rem;
+      height: 250px;
+      width: 100%;
+      background-image: url(../assets/images/bg-main-mobile.png);
+    }
+    .cards {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @include breakpoint-down(medium) {
+        flex-direction: column-reverse;
+      }
+      @include breakpoint-up(medium){
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .card-front .card-img,
+      .card-back img {
+        width: 18rem;
+        @include breakpoint-up(medium) {
+          width: 20rem;
+        }
+        @include breakpoint-up(large){
+          width: 22rem;
+
+        }
+      }
+    }
+  
+    
+    .card-front{
+      position: relative;
+      transform: translate(-25px, -72px);
+      // box-shadow: 20px 10px 20px  $light-grayish-violet;
+      z-index: 1;
+      @include breakpoint-up(medium){
+        transform: translate(50px, 0);
+      }
+      @include breakpoint-up(large){
+        transform: translate(100px, 0);
+      }
+      .card-contents {
+        position: absolute;
+        top: 0;
+        padding: 1rem;
+        inset: 0;
+
+        .card-numbers {
+          margin-top: 2rem;
+          color: $white;
+
+          @include breakpoint-down(medium) {
+            font-size: 1.4375rem;
+            margin-top: 1.5rem;
+          }
+          @include breakpoint-up(medium){
+            font-size: 1.5625rem;
+          }
+          @include breakpoint-up(large){
+            font-size: 1.75rem;
+          }
+        }
+        .card-logo {
+          max-width: 50px;
+        }
+        .card-bottom {
+          color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 2rem;
+          .card-holder {
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            @include breakpoint-down(medium) {
+              font-size: 11px;
+            }
+            @include breakpoint-up(medium) {
+              font-size: 12px;
+            }
+          }
+          
+        }
+      }
+    }
+    .card-back{
+      position: relative;
+      transform: translate(30px, 0);
+      // box-shadow: 20px 0px 24px 0px #eee;
+      @include breakpoint-up(medium){
+        transform: translate(100px, 30px);
+      }
+      @include breakpoint-up(large){
+        transform: translate(150px, 30px);
+      }
+
+      .backcode{
+        position: absolute;
+        right: 35px;
+        top: 68px;
+        @include breakpoint-up(medium){
+          top: 45%;
+          right: 50px;
+        }
+        span{
+          color: $white;
+        }
+      }
+    }
+  }
+}
